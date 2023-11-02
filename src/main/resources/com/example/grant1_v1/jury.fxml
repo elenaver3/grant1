@@ -9,13 +9,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="750.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="479.0" prefWidth="700.0">
          <children>
             <ImageView fitHeight="612.0" fitWidth="867.0" layoutX="-33.0" layoutY="-44.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Picsart_23-11-01_11-01-46-099.jpg" />
+                  <Image url="@back3.jpg" />
                </image>
             </ImageView>
             <ImageView fx:id="imageView_logo" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -29,7 +29,7 @@
                   <Font size="24.0" />
                </font>
             </Text>
-            <Button fx:id="button_profile" layoutX="605.0" layoutY="21.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="130.0" text="Личный кабинет" />
+            <Button fx:id="button_profile" layoutX="585.0" layoutY="21.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="150.0" text="Личный кабинет" />
             <ImageView fx:id="imageView_photo" fitHeight="132.0" fitWidth="200.0" layoutX="47.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true" />
             <Label fx:id="label_welcome" layoutX="384.0" layoutY="135.0" text="Label" />
             <Label fx:id="label_name" layoutX="384.0" layoutY="174.0" text="Label" />

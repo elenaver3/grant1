@@ -11,13 +11,13 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="750.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="479.0" prefWidth="700.0">
          <children>
             <ImageView fitHeight="572.0" fitWidth="829.0" layoutX="-74.0" layoutY="-16.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Picsart_23-11-01_11-02-19-524.jpg" />
+                  <Image url="@back4.jpg" />
                </image>
             </ImageView>
             <ImageView fx:id="imageView_logo" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -33,10 +33,13 @@
             <CheckBox fx:id="checkBoxRemember" layoutX="351.0" layoutY="298.0" mnemonicParsing="false" text="Запомнить меня" />
             <Button fx:id="enter" layoutX="358.0" layoutY="335.0" mnemonicParsing="false" onAction="#enter" prefHeight="38.0" prefWidth="103.0" text="Войти" />
             <Button fx:id="buttonBack" layoutX="32.0" layoutY="414.0" mnemonicParsing="false" onAction="#goBack" prefHeight="38.0" prefWidth="103.0" text="Назад" />
-            <Button fx:id="register" layoutX="632.0" layoutY="24.0" mnemonicParsing="false" onAction="#register" prefHeight="27.0" prefWidth="103.0" text="Регистрация" />
-            <Text layoutX="333.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Авторизация" wrappingWidth="149.5999999999999">
+            <Button fx:id="register" layoutX="614.0" layoutY="24.0" mnemonicParsing="false" onAction="#register" prefHeight="34.0" prefWidth="121.0" text="Регистрация">
                <font>
-                  <Font size="24.0" />
+                  <Font size="10.0" />
+               </font></Button>
+            <Text  layoutX="333.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Авторизация" wrappingWidth="149.5999999999999">
+               <font>
+                  <Font name="Comic Sans MS" size="24.0" />
                </font>
             </Text>
          </children>
