@@ -74,11 +74,27 @@ public class AuthController {
                 ResultSet resultSet = DBConnect.executePreparedQuery(Query.checkAuth,new ArrayList<String>(Arrays.asList(log.getText(),PasswordHashing.hashPassword(psw.getText()))));
                 if (resultSet.next()) {
                     if (resultSet.getString(1).equals("1")) {
-                        profile = new User(log.getText());
-                        HelloApplication.changeMainPage("main.fxml", new MainController());
-                        MainController controller = HelloApplication.getLoader().getController();
-                        System.out.println(controller);
-                        System.out.println(controller.getClass());
+                        resultSet = DBConnect.executePreparedQuery(Query.getRole,new ArrayList<String>(Arrays.asList(log.getText())));
+                        if (resultSet.next()) {
+                            profile = new User(log.getText());
+
+                            if (resultSet.getString(1).equals("1")) {
+                                HelloApplication.changeMainPage("organizer.fxml", new OrganizerController(profile));
+                            }
+                            else {
+                                if (resultSet.getString(1).equals("2")) {
+                                    HelloApplication.changeMainPage("moderator.fxml", new ModeratorController());
+                                }
+                                else {
+                                    if (resultSet.getString(1).equals("3")) {
+                                        HelloApplication.changeMainPage("jury.fxml", new JuryController());
+                                    }
+                                    else {
+                                        HelloApplication.changeMainPage("participant.fxml", new ParticipantController());
+                                    }
+                                }
+                            }
+                        }
                     }
                 } else {
                     System.out.println("e");

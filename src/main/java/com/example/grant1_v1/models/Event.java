@@ -9,7 +9,7 @@ public class Event {
     String name;
     String startDate;
     String logo;
-    
+
 
     public Event(String name, String startDate, String logo) {
         this.name = name;

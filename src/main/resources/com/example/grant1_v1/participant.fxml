@@ -13,7 +13,7 @@
    <children>
       <AnchorPane prefHeight="479.0" prefWidth="700.0">
          <children>
-            <ImageView fitHeight="612.0" fitWidth="867.0" layoutX="-33.0" layoutY="-44.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="612.0" fitWidth="867.0" layoutX="-49.0" layoutY="-9.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@back3.jpg" />
                </image>
@@ -24,7 +24,7 @@
                </image>
             </ImageView>
             <Button fx:id="goBack" layoutX="32.0" layoutY="414.0" mnemonicParsing="false" onAction="#goBack" prefHeight="38.0" prefWidth="103.0" text="Назад" />
-            <Text layoutX="329.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Окно жюри" wrappingWidth="138.0">
+            <Text layoutX="310.0" layoutY="116.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Окно участника" wrappingWidth="225.20004272460938">
                <font>
                   <Font size="24.0" />
                </font>
@@ -33,7 +33,6 @@
             <ImageView fx:id="imageView_photo" fitHeight="132.0" fitWidth="200.0" layoutX="47.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true" />
             <Label fx:id="label_welcome" layoutX="384.0" layoutY="135.0" text="Label" />
             <Label fx:id="label_name" layoutX="384.0" layoutY="174.0" text="Label" />
-            <Button fx:id="buttonActivity" layoutX="323.0" layoutY="240.0" mnemonicParsing="false" onAction="#buttonActivity" prefHeight="54.0" prefWidth="150.0" text="Активность" />
          </children>
       </AnchorPane>
    </children>
