@@ -83,11 +83,11 @@ public class AuthController {
                             }
                             else {
                                 if (resultSet.getString(1).equals("2")) {
-                                    HelloApplication.changeMainPage("moderator.fxml", new ModeratorController());
+                                    HelloApplication.changeMainPage("moderator.fxml", new ModeratorController(profile));
                                 }
                                 else {
                                     if (resultSet.getString(1).equals("3")) {
-                                        HelloApplication.changeMainPage("jury.fxml", new JuryController());
+                                        HelloApplication.changeMainPage("jury.fxml", new JuryController(profile));
                                     }
                                     else {
                                         HelloApplication.changeMainPage("participant.fxml", new ParticipantController());

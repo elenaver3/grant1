@@ -37,12 +37,15 @@ public class EventsController {
 
     @FXML
     void goBack(ActionEvent event) {
+        ////////////////////////////////////////////
+        /////////////////////////////////////////
+        // ТУТ возврат к организаторам если был авторизован?
         HelloApplication.changeMainPage("main.fxml", new MainController());
     }
 
     @FXML
     void openEvent(ActionEvent event) {
-
+        HelloApplication.changeMainPage("event_information.fxml", new EventInfoController());
     }
 
     @FXML

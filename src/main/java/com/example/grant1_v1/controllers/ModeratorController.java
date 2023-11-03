@@ -69,9 +69,13 @@ public class ModeratorController {
 
     }
 
+    private void setLabels() {
+
+    }
+
     @FXML
     public void initialize() {
-        if (user.getGender() == "Ж")
+        if (user.getGender().equals("Ж"))
             label_name.setText("Ms " + user.getName());
         else
             label_name.setText("Mr " + user.getName());

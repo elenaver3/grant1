@@ -56,22 +56,22 @@ public class OrganizerController {
 
     @FXML
     void buttonEvent(ActionEvent event) {
-
+        HelloApplication.changeMainPage("event_information.fxml", new EventsController());
     }
 
     @FXML
     void buttonJuri(ActionEvent event) {
-
+        HelloApplication.changeMainPage("organizer_jury.fxml", new JuryListController(user));
     }
 
     @FXML
     void buttonMember(ActionEvent event) {
-
+        HelloApplication.changeMainPage("organizer_member.fxml", new EventsController());
     }
 
     @FXML
     void buttonProfile(ActionEvent event) {
-
+        HelloApplication.changeMainPage("event_information.fxml", new EventsController());
     }
 
     @FXML
@@ -90,7 +90,7 @@ public class OrganizerController {
 
     @FXML
     public void initialize() {
-        if (user.getGender() == "Ж")
+        if (user.getGender().equals("Ж"))
             label_name.setText("Ms " + user.getName());
         else
             label_name.setText("Mr " + user.getName());

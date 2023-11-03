@@ -61,7 +61,7 @@ public class JuryController {
 
     @FXML
     public void initialize() {
-        if (user.getGender() == "Ж")
+        if (user.getGender().equals("Ж"))
             label_name.setText("Ms " + user.getName());
         else
             label_name.setText("Mr " + user.getName());
@@ -92,6 +92,16 @@ public class JuryController {
             else
                 label_welcome.setText("Доброй ночи!");
         }
+
     }
+
+    public JuryController(User user) {
+        this.user = user;
+    }
+
+    public JuryController() {
+
+    }
+
 
 }
