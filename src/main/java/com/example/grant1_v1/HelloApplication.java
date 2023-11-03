@@ -11,6 +11,7 @@ public class HelloApplication extends Application {
     private static Stage s;
     private static FXMLLoader loader;
 
+    //
     @Override
     public void start(Stage stage) throws IOException {
         s = stage;

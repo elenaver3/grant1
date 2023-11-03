@@ -11,19 +11,24 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="966.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox stylesheets="@style.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="966.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="757.0" prefWidth="966.0">
          <children>
+            <ImageView fitHeight="736.0" fitWidth="1171.0" layoutX="-8.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@back4.jpg" />
+               </image>
+            </ImageView>
             <ImageView fx:id="imageView_logo" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@logo.png" />
                </image>
             </ImageView>
             <Button fx:id="button_back" layoutX="38.0" layoutY="660.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="103.0" text="Назад" />
-            <Text layoutX="445.0" layoutY="110.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Участники" wrappingWidth="141.0">
+            <Text layoutX="452.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Участники" wrappingWidth="141.0">
                <font>
-                  <Font size="20.0" />
+                  <Font size="24.0" />
                </font>
             </Text>
             <TableView fx:id="tableView_member" layoutX="26.0" layoutY="446.0" prefHeight="138.0" prefWidth="915.0">
@@ -37,16 +42,22 @@
                   <TableColumn prefWidth="134.0" text="Логотип" />
               </columns>
             </TableView>
-            <Text layoutX="226.0" layoutY="201.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Мероприятие" />
-            <ChoiceBox fx:id="choiceBox_nameEvent" layoutX="346.0" layoutY="183.0" prefHeight="26.0" prefWidth="197.0" />
-            <Text layoutX="141.0" layoutY="254.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Активности" />
-            <Text layoutX="215.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Название" />
-            <Text layoutX="434.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Время" />
-            <Text layoutX="662.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Жюри" />
-            <ChoiceBox fx:id="choiceBox_nameActivity" layoutX="148.0" layoutY="298.0" prefHeight="26.0" prefWidth="197.0" />
-            <ChoiceBox fx:id="choiceBox_time" layoutX="387.0" layoutY="298.0" prefHeight="26.0" prefWidth="135.0" />
-            <ChoiceBox fx:id="choiceBox_jury" layoutX="602.0" layoutY="298.0" prefHeight="26.0" prefWidth="159.0" />
-            <Button fx:id="button_ok" layoutX="735.0" layoutY="356.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="103.0" text="Ок" />
+            <Text layoutX="288.0" layoutY="200.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Мероприятие">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <ChoiceBox fx:id="choiceBox_nameEvent" layoutX="404.0" layoutY="182.0" prefHeight="26.0" prefWidth="197.0" />
+            <Text layoutX="176.0" layoutY="253.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Активности">
+               <font>
+                  <Font size="14.0" />
+               </font></Text>
+            <Text layoutX="179.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Название" />
+            <Text layoutX="435.0" layoutY="283.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Время" />
+            <Text layoutX="630.0" layoutY="284.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Жюри" />
+            <ChoiceBox fx:id="choiceBox_nameActivity" layoutX="176.0" layoutY="295.0" prefHeight="26.0" prefWidth="197.0" />
+            <ChoiceBox fx:id="choiceBox_time" layoutX="435.0" layoutY="294.0" prefHeight="26.0" prefWidth="135.0" />
+            <ChoiceBox fx:id="choiceBox_jury" layoutX="630.0" layoutY="295.0" prefHeight="26.0" prefWidth="159.0" />
+            <Button fx:id="button_ok" layoutX="699.0" layoutY="353.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="89.0" text="Выбрать" />
          </children>
       </AnchorPane>
    </children>

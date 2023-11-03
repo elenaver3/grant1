@@ -11,32 +11,37 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="713.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="728.0" prefWidth="713.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="731.0" prefWidth="750.0">
          <children>
-            <ImageView fx:id="imageView_logo" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="765.0" fitWidth="1211.0" layoutX="-300.0" layoutY="-13.0" opacity="0.4" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@back3.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imageView_logo" disable="true" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@logo.png" />
                </image>
             </ImageView>
-            <Button fx:id="button_back" layoutX="31.0" layoutY="668.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="103.0" text="Назад" />
-            <Text layoutX="311.0" layoutY="103.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Добавить мероприятие" wrappingWidth="239.0">
+            <Button fx:id="button_back" layoutX="21.0" layoutY="668.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="95.0" text="Назад" />
+            <Text layoutX="247.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Добавить мероприятие" wrappingWidth="279.79998779296875">
                <font>
-                  <Font size="20.0" />
+                  <Font size="24.0" />
                </font>
             </Text>
             <Button fx:id="button_csv" layoutX="527.0" layoutY="195.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="103.0" text="CSV" />
             <DatePicker fx:id="datePicker_start" layoutX="164.0" layoutY="208.0" prefHeight="26.0" prefWidth="123.0" />
             <DatePicker fx:id="datePicker_end" layoutX="164.0" layoutY="251.0" prefHeight="26.0" prefWidth="123.0" />
-            <Text layoutX="89.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Начало" />
+            <Text layoutX="69.0" layoutY="226.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Начало" />
             <Text layoutX="65.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Окончание" />
-            <Text layoutX="55.0" layoutY="312.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Мероприятие" />
+            <Text layoutX="62.0" layoutY="311.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Мероприятие" />
             <Text layoutX="64.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Направление" />
-            <Text layoutX="82.0" layoutY="392.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Город" />
-            <Text layoutX="64.0" layoutY="457.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Активности">
+            <Text layoutX="66.0" layoutY="391.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Город" />
+            <Text layoutX="62.0" layoutY="468.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Активности" wrappingWidth="94.892578125">
                <font>
-                  <Font size="14.0" />
+                  <Font size="16.0" />
                </font>
             </Text>
             <Button fx:id="button_board" layoutX="527.0" layoutY="256.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="103.0" text="Доска" />
@@ -55,7 +60,7 @@
             <ChoiceBox fx:id="choiceBox_time3" layoutX="387.0" layoutY="576.0" prefHeight="26.0" prefWidth="123.0" />
             <ChoiceBox fx:id="choiceBox_jury2" layoutX="550.0" layoutY="539.0" prefHeight="26.0" prefWidth="123.0" />
             <ChoiceBox fx:id="choiceBox_jury3" layoutX="550.0" layoutY="576.0" prefHeight="26.0" prefWidth="123.0" />
-            <Button fx:id="button_ok" layoutX="510.0" layoutY="630.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="103.0" text="Ок" />
+            <Button fx:id="button_ok" layoutX="569.0" layoutY="630.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="103.0" text="Ок" />
             <Button fx:id="button_add" layoutX="132.0" layoutY="611.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="38.0" text="+" />
          </children>
       </AnchorPane>
