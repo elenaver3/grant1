@@ -75,11 +75,10 @@ public class AuthController {
                 if (resultSet.next()) {
                     if (resultSet.getString(1).equals("1")) {
                         profile = new User(log.getText());
-                        HelloApplication.changeMainPage("main.fxml", new MainController(profile));
+                        HelloApplication.changeMainPage("main.fxml", new MainController());
                         MainController controller = HelloApplication.getLoader().getController();
                         System.out.println(controller);
                         System.out.println(controller.getClass());
-                        controller.setProfile(profile);
                     }
                 } else {
                     System.out.println("e");
@@ -97,7 +96,7 @@ public class AuthController {
 
     @FXML
     void goBack(ActionEvent event) {
-        HelloApplication.changeMainPage("hello-view.fxml");
+        HelloApplication.changeMainPage("main.fxml", new MainController());
     }
 
 }

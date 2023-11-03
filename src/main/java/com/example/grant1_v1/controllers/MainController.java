@@ -14,16 +14,6 @@ import javafx.scene.image.ImageView;
 
 public class MainController {
 
-    private User profiled;
-
-    public User getProfile() {
-        return profiled;
-    }
-
-    public void setProfile(User profile) {
-        this.profiled = profile;
-    }
-
     @FXML
     private Button buttonBack;
 
@@ -37,19 +27,29 @@ public class MainController {
     private ImageView imageView_logo;
 
     @FXML
-    private Label profile;
+    void goBack(ActionEvent event) {
+        System.exit(0);
+    }
 
     @FXML
-    void goBack(ActionEvent event) {
-        HelloApplication.changeMainPage("authorization.fxml");
+    void openAuth(ActionEvent event) {
+        HelloApplication.changeMainPage("authorization.fxml", new AuthController());
+    }
+
+    @FXML
+    void openEvents(ActionEvent event) {
+        HelloApplication.changeMainPage("event.fxml", new EventsController());
     }
 
     @FXML
     public void initialize() {
-        setProfile(profiled);
+
     }
-    public MainController(User user){
-        profiled = user;
+
+
+    public MainController(){
+
     }
+
 
 }
