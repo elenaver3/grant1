@@ -107,7 +107,7 @@ public class AuthController {
 
     @FXML
     void register(ActionEvent event) {
-        HelloApplication.changeMainPage("registration.fxml");
+        HelloApplication.changeMainPage("registration.fxml", new RegController());
     }
 
     @FXML

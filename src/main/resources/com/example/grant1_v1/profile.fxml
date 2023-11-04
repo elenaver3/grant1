@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Group?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
@@ -13,7 +14,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="750.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="595.0" prefWidth="750.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="602.0" prefWidth="750.0">
          <children>
@@ -29,14 +30,18 @@
             </ImageView>
             <Text layoutX="89.0" layoutY="216.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ФИО:" wrappingWidth="47.1560001373291" />
             <TextField fx:id="textField_fio" layoutX="152.0" layoutY="199.0" />
-            <Button fx:id="button_back" layoutX="25.0" layoutY="549.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="90.0" text="Назад" />
+            <Button fx:id="goBack" layoutX="25.0" layoutY="549.0" mnemonicParsing="false" onAction="#goBack" prefHeight="27.0" prefWidth="90.0" text="Назад" />
             <Text layoutX="302.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Личный кабинет" wrappingWidth="208.60003662109375">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
-            <RadioButton fx:id="radioButton_male" layoutX="158.0" layoutY="246.0" mnemonicParsing="false" text="М" />
-            <RadioButton fx:id="radioButton_female" layoutX="248.0" layoutY="246.0" mnemonicParsing="false" text="Ж" />
+            <Group layoutX="164.0" layoutY="232.0">
+               <children>
+                  <RadioButton fx:id="radioButton_male" layoutX="-2.0" layoutY="7.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="38.0" text="М" />
+                  <RadioButton fx:id="radioButton_female" layoutX="73.0" layoutY="10.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="40.0" text="Ж" />
+               </children>
+            </Group>
             <Text layoutX="33.0" layoutY="303.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Дата рождения:" wrappingWidth="103.0" />
             <Text layoutX="82.0" layoutY="398.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Город:" wrappingWidth="62.0" />
             <Text layoutX="68.0" layoutY="448.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Телефон:" wrappingWidth="68.0" />
@@ -55,8 +60,8 @@
             <ImageView fx:id="imageView_photo" fitHeight="150.0" fitWidth="235.0" layoutX="465.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true" />
             <CheckBox fx:id="checkBox_changePassword" layoutX="553.0" layoutY="203.0" mnemonicParsing="false" text="Смена пароля" />
             <CheckBox fx:id="checkBox_showPassword" layoutX="553.0" layoutY="326.0" mnemonicParsing="false" text="Показать пароль" />
-            <Button fx:id="button_save" layoutX="565.0" layoutY="363.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="111.0" text="Сохранить" />
-            <Button fx:id="button_cancel" layoutX="565.0" layoutY="417.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="111.0" text="Отмена" />
+            <Button fx:id="saveChanges" layoutX="565.0" layoutY="363.0" mnemonicParsing="false" onAction="#saveChanges" prefHeight="34.0" prefWidth="111.0" text="Сохранить" />
+            <Button fx:id="cancelChanges" layoutX="565.0" layoutY="417.0" mnemonicParsing="false" onAction="#cancelChanges" prefHeight="34.0" prefWidth="111.0" text="Отмена" />
          </children>
       </AnchorPane>
    </children>

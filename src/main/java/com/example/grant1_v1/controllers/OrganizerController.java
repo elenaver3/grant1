@@ -71,7 +71,7 @@ public class OrganizerController {
 
     @FXML
     void buttonProfile(ActionEvent event) {
-        HelloApplication.changeMainPage("event_information.fxml", new EventsController());
+        HelloApplication.changeMainPage("profile.fxml", new ProfileController(user));
     }
 
     @FXML
