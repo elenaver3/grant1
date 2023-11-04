@@ -21,9 +21,9 @@ public class TableViewGenerator<T> {
 
         }
         table.getItems().addAll(list);
-        table.setLayoutX(20);
-        table.setLayoutY(20);
-        table.setPrefHeight(350);
+        table.setLayoutX(200);
+        table.setLayoutY(200);
+        table.setPrefHeight(300);
         table.setPrefWidth(700);
     }
 

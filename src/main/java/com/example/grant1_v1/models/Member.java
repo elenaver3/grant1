@@ -3,18 +3,19 @@ package com.example.grant1_v1.models;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Jury {
+public class Member {
+
     String name;
     String accessLevel;
     String mail;
     String photo;
-    public Jury(String name, String accessLevel, String mail, String photo) {
+    public Member(String name, String accessLevel, String mail, String photo) {
         this.name = name;
         this.accessLevel = accessLevel;
         this.mail = mail;
         this.photo = photo;
     }
-    public Jury(ResultSet resultSet) {
+    public Member(ResultSet resultSet) {
         try {
             this.name = resultSet.getString(1);
             this.accessLevel = resultSet.getString(2);

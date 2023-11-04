@@ -78,6 +78,10 @@ public class EventsController {
         FilteredList<Event> filteredItems = new FilteredList<>(items, p->true);
         TableView<Event> eventTable = new TableViewGenerator<Event>(Event.class,filteredItems).getTable();
         table = eventTable;
+        table.setLayoutX(150);
+        table.setLayoutY(150);
+        table.setPrefHeight(250);
+        table.setPrefWidth(500);
         eventsAnchor.getChildren().add(eventTable);
     }
 

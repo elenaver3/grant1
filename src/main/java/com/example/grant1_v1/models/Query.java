@@ -13,5 +13,7 @@ public class Query {
     public static final String auth_psw = "Username1234!";
 
     public static final String getEvents = "SELECT name, startDate, logo FROM event";
+    public static final String getJuryies = "SELECT user.name, mail, photo, accesslevel.name FROM user JOIN accesslevel ON accesslevel.id=user.accessLevel WHERE accessLevel IN (2, 3)";
     public static final String getRole = "SELECT accessLevel FROM user WHERE mail=?";
+    public static final String getMembers = "SELECT user.name, mail, photo, accesslevel.name FROM user JOIN accesslevel ON accesslevel.id=user.accessLevel WHERE accessLevel = 4";
     }
