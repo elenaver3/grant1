@@ -2,38 +2,34 @@ package com.example.grant1_v1.models;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Date;
 
 public class Event {
 
-    String name;
+    String event_name;
     String startDate;
     String logo;
+    String activity_name;
 
 
-    public Event(String name, String startDate, String logo) {
-        this.name = name;
+
+    public Event(String event_name, String activity_name, String startDate, String logo) {
+        this.event_name = event_name;
+        this.activity_name = activity_name;
         this.startDate = startDate;
         this.logo = logo;
     }
     public Event(ResultSet resultSet) {
         try {
-            this.name = resultSet.getString(1);
-            this.startDate = resultSet.getString(2);
-            this.logo = resultSet.getString(3);
+            this.event_name = resultSet.getString(1);
+            this.activity_name = resultSet.getString(2);
+            this.startDate = resultSet.getString(3);
+            this.logo = resultSet.getString(4);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getStartDate() {
         return startDate;
@@ -51,4 +47,19 @@ public class Event {
         this.logo = logo;
     }
 
+    public String getEvent_name() {
+        return event_name;
+    }
+
+    public void setEvent_name(String event_name) {
+        this.event_name = event_name;
+    }
+
+    public String getActivity_name() {
+        return activity_name;
+    }
+
+    public void setActivity_name(String activity_name) {
+        this.activity_name = activity_name;
+    }
 }
