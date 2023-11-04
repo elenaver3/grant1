@@ -82,7 +82,20 @@ public class ProfileController {
 
     @FXML
     void goBack(ActionEvent event) {
-        HelloApplication.changeMainPage("organizer.fxml", new OrganizerController(user));
+        switch (user.getAccessLevel()) {
+            case 1:
+                HelloApplication.changeMainPage("organizer.fxml", new OrganizerController(user));
+                break;
+            case 2:
+                HelloApplication.changeMainPage("moderator.fxml", new ModeratorController(user));
+                break;
+            case 3:
+                HelloApplication.changeMainPage("jury.fxml", new JuryController(user));
+                break;
+            case 4:
+                HelloApplication.changeMainPage("participant.fxml", new ParticipantController(user));
+                break;
+        }
     }
 
     @FXML

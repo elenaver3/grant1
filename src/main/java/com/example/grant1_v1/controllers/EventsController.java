@@ -1,10 +1,7 @@
 package com.example.grant1_v1.controllers;
 
 import com.example.grant1_v1.HelloApplication;
-import com.example.grant1_v1.models.DBConnect;
-import com.example.grant1_v1.models.Event;
-import com.example.grant1_v1.models.Query;
-import com.example.grant1_v1.models.TableViewGenerator;
+import com.example.grant1_v1.models.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -19,6 +16,19 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class EventsController {
+
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    @FXML
+    private Button buttonCreate;
 
     @FXML
     private Button goBack;
@@ -37,10 +47,15 @@ public class EventsController {
 
     @FXML
     void goBack(ActionEvent event) {
-        ////////////////////////////////////////////
-        /////////////////////////////////////////
-        // ТУТ возврат к организаторам если был авторизован?
-        HelloApplication.changeMainPage("main.fxml", new MainController());
+//        if (user.getMail().equals(""))
+            HelloApplication.changeMainPage("main.fxml", new MainController());
+//        else
+//            HelloApplication.changeMainPage("organizer.fxml", new OrganizerController(user));
+    }
+
+    @FXML
+    void buttonCreate(ActionEvent event) {
+        HelloApplication.changeMainPage("add_event.fxml", new AddEventController(user));
     }
 
     @FXML
@@ -64,6 +79,14 @@ public class EventsController {
         TableView<Event> eventTable = new TableViewGenerator<Event>(Event.class,filteredItems).getTable();
         table = eventTable;
         eventsAnchor.getChildren().add(eventTable);
+    }
+
+    public EventsController(User user) {
+        this.user = user;
+    }
+
+    public EventsController() {
+        this.user = new User();
     }
 
 

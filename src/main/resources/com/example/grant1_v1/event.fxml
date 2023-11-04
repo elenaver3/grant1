@@ -29,6 +29,7 @@
                </font>
             </Text>
             <Button fx:id="openEvent" layoutX="430.0" layoutY="423.0" mnemonicParsing="false" onAction="#openEvent" prefHeight="46.0" prefWidth="298.0" text="Открыть подробную информацию" />
+            <Button fx:id="buttonCreate" layoutX="316.0" layoutY="427.0" mnemonicParsing="false" onAction="#buttonCreate" prefHeight="38.0" prefWidth="103.0" text="Создать" />
          </children>
       </AnchorPane>
    </children>

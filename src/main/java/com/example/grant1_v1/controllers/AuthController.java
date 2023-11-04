@@ -90,7 +90,7 @@ public class AuthController {
                                         HelloApplication.changeMainPage("jury.fxml", new JuryController(profile));
                                     }
                                     else {
-                                        HelloApplication.changeMainPage("participant.fxml", new ParticipantController());
+                                        HelloApplication.changeMainPage("participant.fxml", new ParticipantController(profile));
                                     }
                                 }
                             }

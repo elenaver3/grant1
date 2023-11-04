@@ -56,7 +56,8 @@ public class OrganizerController {
 
     @FXML
     void buttonEvent(ActionEvent event) {
-        HelloApplication.changeMainPage("event_information.fxml", new EventsController());
+        //HelloApplication.changeMainPage("event_information.fxml", new EventsController());
+        HelloApplication.changeMainPage("event.fxml", new EventsController(user));
     }
 
     @FXML
@@ -66,7 +67,7 @@ public class OrganizerController {
 
     @FXML
     void buttonMember(ActionEvent event) {
-        HelloApplication.changeMainPage("organizer_member.fxml", new EventsController());
+        HelloApplication.changeMainPage("organizer_member.fxml", new MemberController(user));
     }
 
     @FXML

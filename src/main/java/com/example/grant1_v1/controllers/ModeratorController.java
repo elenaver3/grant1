@@ -52,6 +52,7 @@ public class ModeratorController {
 
     @FXML
     void buttonProfile(ActionEvent event) {
+        HelloApplication.changeMainPage("profile.fxml", new ProfileController(user));
 
     }
 
@@ -69,9 +70,6 @@ public class ModeratorController {
 
     }
 
-    private void setLabels() {
-
-    }
 
     @FXML
     public void initialize() {

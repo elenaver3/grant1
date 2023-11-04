@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox stylesheets="@style.css" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="528.0" prefWidth="750.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane prefHeight="537.0" prefWidth="750.0">
          <children>
@@ -40,7 +40,7 @@
               </columns>
             </TableView>
             <TextField fx:id="textField_search" layoutX="275.0" layoutY="429.0" />
-            <Button fx:id="button_create" layoutX="602.0" layoutY="422.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="103.0" text="Создать" />
+            <Button fx:id="buttonCreate" layoutX="602.0" layoutY="422.0" mnemonicParsing="false" onAction="#buttonCreate" prefHeight="38.0" prefWidth="103.0" text="Создать" />
             <Button fx:id="button_search" layoutX="444.0" layoutY="428.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="90.0" text="Поиск" />
          </children>
       </AnchorPane>

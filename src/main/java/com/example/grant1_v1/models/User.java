@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class User {
     private String name;
     private String mail;
-    private int roleId;
+    private int accessLevel;
     private String gender;
     public User(String mail){
         try {
@@ -18,7 +18,7 @@ public class User {
                 name = result.getString(2);
                 gender = result.getString(3);
                 mail = result.getString(4);
-                roleId = result.getInt(11);
+                accessLevel = result.getInt(11);
             }else{
                 System.out.println("#");
             }
@@ -29,6 +29,10 @@ public class User {
 
     }
 
+    public User() {
+        this.mail = "";
+    }
+
     public String getMail() {
         return mail;
     }
@@ -37,9 +41,6 @@ public class User {
         return name;
     }
 
-    public int getRoleId() {
-        return roleId;
-    }
 
     public void setName(String name) {
         this.name = name;
@@ -49,9 +50,6 @@ public class User {
         this.mail = mail;
     }
 
-    public void setRoleId(int roleId) {
-        this.roleId = roleId;
-    }
 
     public String getGender() {
         return gender;
@@ -59,5 +57,13 @@ public class User {
 
     public void setGender(String gender) {
         this.gender = gender;
+    }
+
+    public int getAccessLevel() {
+        return accessLevel;
+    }
+
+    public void setAccessLevel(int accessLevel) {
+        this.accessLevel = accessLevel;
     }
 }

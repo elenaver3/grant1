@@ -51,6 +51,14 @@ public class ParticipantController {
         HelloApplication.changeMainPage("authorization.fxml", new AuthController());
     }
 
+    public ParticipantController(User user) {
+        this.user = user;
+    }
+
+    public ParticipantController() {
+
+    }
+
     @FXML
     public void initialize() {
         if (user.getGender().equals("Ж"))

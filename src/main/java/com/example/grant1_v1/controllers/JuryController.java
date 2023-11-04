@@ -51,6 +51,7 @@ public class JuryController {
 
     @FXML
     void buttonProfile(ActionEvent event) {
+        HelloApplication.changeMainPage("profile.fxml", new ProfileController(user));
 
     }
 
