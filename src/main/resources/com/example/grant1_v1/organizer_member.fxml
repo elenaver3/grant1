@@ -33,7 +33,23 @@
                <font>
                   <Font size="15.0" />
                </font></Text>
-            <TextField fx:id="eventField" layoutX="438.0" layoutY="159.0" onAction="#eventField" />
+            <TextField fx:id="filterEvent" layoutX="438.0" layoutY="159.0" onAction="#filterEvent" />
+            <Text layoutX="317.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ФИО">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <TextField fx:id="filterFio" layoutX="438.0" layoutY="121.0" onAction="#filterFio" />
+            <Text layoutX="663.0" layoutY="140.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Количество:">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
+            <Text fx:id="countLabel" layoutX="762.0" layoutY="141.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Text>
          </children>
       </AnchorPane>
    </children>

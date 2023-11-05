@@ -18,7 +18,7 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         loader = fxmlLoader;
         Scene scene = new Scene(fxmlLoader.load(), 320, 320);
-        stage.setTitle("Добро пожаловать!");
+        stage.setTitle("Приложение");
         stage.setScene(scene);
         stage.centerOnScreen();
         stage.setResizable(false);
@@ -31,7 +31,6 @@ public class HelloApplication extends Application {
     }
 
     public static void changeMainPage(String path) { //сменить текущую сцену
-        //changeMainPage("hello-view.fxml",new HelloController());
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource(path));
         try {
             Stage stage = s;

@@ -16,6 +16,7 @@ public class Query {
     public static final String getJuryies = "SELECT user.name, mail, photo, accesslevel.name FROM user JOIN accesslevel ON accesslevel.id=user.accessLevel WHERE accessLevel IN (2, 3)";
     public static final String getRole = "SELECT accessLevel FROM user WHERE mail=?";
     public static final String getMembers = "SELECT user.name, mail, photo, accesslevel.name FROM user JOIN accesslevel ON accesslevel.id=user.accessLevel WHERE accessLevel = 4";
+    public static final String getMembersCount = "SELECT COUNT(user.name) FROM user JOIN accesslevel ON accesslevel.id=user.accessLevel WHERE accessLevel = 4";
     public static final String getActivities = "SELECT activity.name AS activity, event.startDate AS date, activity.time FROM event JOIN activity ON activity.eventID=event.id;";
 
 

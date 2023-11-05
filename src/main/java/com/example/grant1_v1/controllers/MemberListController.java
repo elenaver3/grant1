@@ -12,11 +12,12 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class MemberController {
+public class MemberListController {
 
     private User user;
 
@@ -29,13 +30,19 @@ public class MemberController {
     }
 
     @FXML
-    private TextField eventField;
-
-    @FXML
     private Button goBack;
 
     @FXML
+    private TextField filterEvent;
+
+    @FXML
+    private TextField filterFio;
+
+    @FXML
     private ImageView imageView_logo;
+
+    @FXML
+    private Text countLabel;
 
     @FXML
     private AnchorPane memberAnchor;
@@ -44,9 +51,15 @@ public class MemberController {
     TableView<Member> table;
 
     @FXML
-    void eventField(ActionEvent event) {
+    void filterEvent(ActionEvent event) {
 
     }
+
+    @FXML
+    void filterFio(ActionEvent event) {
+
+    }
+
 
     @FXML
     public void initialize() {
@@ -65,6 +78,15 @@ public class MemberController {
         table = memberTable;
 
         memberAnchor.getChildren().add(memberTable);
+
+        resultSet = DBConnect.getDBConnect().executeQuery(Query.getMembersCount);
+        try {
+            resultSet.next();
+            countLabel.setText(resultSet.getString(1));
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
     @FXML
@@ -72,11 +94,11 @@ public class MemberController {
         HelloApplication.changeMainPage("organizer.fxml", new OrganizerController(user));
     }
 
-    public MemberController(User user) {
+    public MemberListController(User user) {
         this.user = user;
     }
 
-    public MemberController() {
+    public MemberListController() {
 
     }
 

@@ -1,9 +1,6 @@
 package com.example.grant1_v1.controllers;
 
 import com.example.grant1_v1.HelloApplication;
-import com.example.grant1_v1.models.Organizer;
-import com.example.grant1_v1.models.Query;
-import com.example.grant1_v1.models.Regex;
 import com.example.grant1_v1.models.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -67,7 +64,7 @@ public class OrganizerController {
 
     @FXML
     void buttonMember(ActionEvent event) {
-        HelloApplication.changeMainPage("organizer_member.fxml", new MemberController(user));
+        HelloApplication.changeMainPage("organizer_member.fxml", new MemberListController(user));
     }
 
     @FXML

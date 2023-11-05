@@ -1,13 +1,23 @@
 package com.example.grant1_v1.controllers;
 
 import com.example.grant1_v1.HelloApplication;
+import com.example.grant1_v1.models.DBConnect;
+import com.example.grant1_v1.models.Query;
+import com.example.grant1_v1.models.TableViewGenerator;
 import com.example.grant1_v1.models.User;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -62,6 +72,21 @@ public class ModeratorController {
 
     }
 
+    @FXML
+    TableView<Activity> table;
+
+    @FXML
+    private AnchorPane moderatorAnchor;
+
+    @FXML
+    private Button buttonActivity;
+
+    @FXML
+    void buttonActivity(ActionEvent event) {
+
+    }
+
+
     public ModeratorController(User user) {
         this.user = user;
     }
@@ -104,5 +129,24 @@ public class ModeratorController {
             else
                 label_welcome.setText("Доброй ночи!");
         }
+
+        ResultSet resultSet = DBConnect.getDBConnect().executeQuery(Query.getActivities);
+        ObservableList<Activity> items = FXCollections.observableArrayList();
+        try {
+            while (resultSet.next()) {
+                items.add(new Activity(resultSet));
+            }
+        } catch (SQLException e) {
+            System.out.println("Activity list creation error");
+            throw new RuntimeException(e);
+        }
+        FilteredList<Activity> filteredItems = new FilteredList<>(items, p->true);
+        TableView<Activity> activityTable = new TableViewGenerator<Activity>(Activity.class,filteredItems).getTable();
+        table = activityTable;
+        table.setLayoutX(150);
+        table.setLayoutY(200);
+        table.setPrefHeight(250);
+        table.setPrefWidth(550);
+        moderatorAnchor.getChildren().add(activityTable);
     }
 }

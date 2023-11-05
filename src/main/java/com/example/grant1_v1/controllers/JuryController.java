@@ -51,11 +51,6 @@ public class JuryController {
     @FXML
     private Label label_welcome;
 
-    @FXML
-    TableView<Activity> table;
-
-    @FXML
-    private AnchorPane activityAnchor;
 
     @FXML
     void buttonActivity(ActionEvent event) {
@@ -107,24 +102,7 @@ public class JuryController {
                 label_welcome.setText("Доброй ночи!");
         }
 
-        ResultSet resultSet = DBConnect.getDBConnect().executeQuery(Query.getActivities);
-        ObservableList<Activity> items = FXCollections.observableArrayList();
-        try {
-            while (resultSet.next()) {
-                items.add(new Activity(resultSet));
-            }
-        } catch (SQLException e) {
-            System.out.println("Activity list creation error");
-            throw new RuntimeException(e);
-        }
-        FilteredList<Activity> filteredItems = new FilteredList<>(items, p->true);
-        TableView<Activity> activityTable = new TableViewGenerator<Activity>(Activity.class,filteredItems).getTable();
-        table = activityTable;
-        table.setLayoutX(150);
-        table.setLayoutY(200);
-        table.setPrefHeight(250);
-        table.setPrefWidth(550);
-        activityAnchor.getChildren().add(activityTable);
+
 
     }
 
