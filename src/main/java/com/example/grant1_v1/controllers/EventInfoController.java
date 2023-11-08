@@ -1,6 +1,7 @@
 package com.example.grant1_v1.controllers;
 
 import com.example.grant1_v1.HelloApplication;
+import com.example.grant1_v1.models.MyEvent;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,6 +10,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 
 public class EventInfoController {
+    EventsController toPage;
+    MyEvent event;
     @FXML
     private TextArea descriptionEvent;
 
@@ -35,7 +38,17 @@ public class EventInfoController {
 
     @FXML
     void goBack(ActionEvent event) {
-        HelloApplication.changeMainPage("event.fxml", new EventsController());
+        HelloApplication.changeMainPage("event.fxml", toPage);
     }
 
+    @FXML
+    public void initialize() {
+        labelDate.setText(labelDate.getText() + ": " + event.getStartDate());
+        nameEvent.setText(nameEvent.getText() + ": " + event.getEventName());
+    }
+
+    public EventInfoController(MyEvent event, EventsController toPage) {
+        this.toPage = toPage;
+        this.event = event;
+    }
 }

@@ -24,7 +24,7 @@
                </image>
             </ImageView>
             <Button fx:id="goBack" layoutX="32.0" layoutY="414.0" mnemonicParsing="false" onAction="#goBack" prefHeight="38.0" prefWidth="103.0" text="Назад" />
-            <Label fx:id="nameEvent" layoutX="348.0" layoutY="63.0" text="Название мероприятия">
+            <Label fx:id="nameEvent" layoutX="261.0" layoutY="59.0" prefHeight="60.0" prefWidth="263.0" text="Название мероприятия" textAlignment="CENTER">
                <font>
                   <Font size="16.0" />
                </font>

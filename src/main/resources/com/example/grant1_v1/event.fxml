@@ -5,10 +5,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="750.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="490.0" prefWidth="882.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <AnchorPane fx:id="eventsAnchor" prefHeight="479.0" prefWidth="700.0">
          <children>
@@ -17,19 +18,20 @@
                   <Image url="@back2.jpg" />
                </image>
             </ImageView>
-            <ImageView fx:id="imageView_logo" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imageView_logo" fitHeight="58.0" fitWidth="58.0" layoutX="32.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@logo.png" />
                </image>
             </ImageView>
-            <Button fx:id="goBack" layoutX="14.0" layoutY="433.0" mnemonicParsing="false" onAction="#goBack" prefHeight="32.0" prefWidth="90.0" text="Назад" />
-            <Text layoutX="316.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Мероприятия" wrappingWidth="177.800048828125">
+            <Button fx:id="goBack" layoutX="32.0" layoutY="423.0" mnemonicParsing="false" onAction="#goBack" prefHeight="46.0" prefWidth="114.0" text="Назад" />
+            <Text layoutX="342.0" layoutY="50.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Мероприятия" wrappingWidth="177.800048828125">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
-            <Button fx:id="openEvent" layoutX="430.0" layoutY="423.0" mnemonicParsing="false" onAction="#openEvent" prefHeight="46.0" prefWidth="298.0" text="Открыть подробную информацию" />
-            <Button fx:id="buttonCreate" layoutX="316.0" layoutY="427.0" mnemonicParsing="false" onAction="#buttonCreate" prefHeight="38.0" prefWidth="103.0" text="Создать" />
+            <Button fx:id="openEvent" layoutX="550.0" layoutY="423.0" mnemonicParsing="false" onAction="#openEvent" prefHeight="46.0" prefWidth="298.0" text="Открыть подробную информацию" />
+            <Button fx:id="buttonCreate" layoutX="374.0" layoutY="427.0" mnemonicParsing="false" onAction="#buttonCreate" prefHeight="46.0" prefWidth="113.0" text="Создать" />
+            <Rectangle fx:id="tableSize" arcHeight="5.0" arcWidth="5.0" fill="#8cc8ff3c" height="333.0" layoutX="30.0" layoutY="78.0" stroke="TRANSPARENT" strokeType="INSIDE" width="819.0" />
          </children>
       </AnchorPane>
    </children>

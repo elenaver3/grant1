@@ -8,9 +8,13 @@ import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,6 +22,7 @@ import java.sql.SQLException;
 public class EventsController {
 
     private User user;
+
 
     public User getUser() {
         return user;
@@ -43,14 +48,12 @@ public class EventsController {
     private AnchorPane eventsAnchor;
 
     @FXML
-    TableView<Event> table;
-
+    TableView<MyEvent> table;
+    @FXML
+    private Rectangle tableSize;
     @FXML
     void goBack(ActionEvent event) {
-//        if (user.getMail().equals(""))
             HelloApplication.changeMainPage("main.fxml", new MainController());
-//        else
-//            HelloApplication.changeMainPage("organizer.fxml", new OrganizerController(user));
     }
 
     @FXML
@@ -60,29 +63,38 @@ public class EventsController {
 
     @FXML
     void openEvent(ActionEvent event) {
-        HelloApplication.changeMainPage("event_information.fxml", new EventInfoController());
+        if(table.getSelectionModel().getSelectedItem()!=null) {
+            HelloApplication.changeMainPage("event_information.fxml", new EventInfoController(table.getSelectionModel().getSelectedItem(),this));
+            openEvent.setStyle("-fx-text-fill: red; ");
+        }
     }
 
     @FXML
     public void initialize() {
         ResultSet resultSet = DBConnect.getDBConnect().executeQuery(Query.getEvents);
-        ObservableList<Event> items = FXCollections.observableArrayList();
+        ObservableList<MyEvent> items = FXCollections.observableArrayList();
         try {
             while (resultSet.next()) {
-                items.add(new Event(resultSet));
+                items.add(new MyEvent(resultSet));
             }
         } catch (SQLException e) {
             System.out.println("Event list creation error");
             throw new RuntimeException(e);
         }
-        FilteredList<Event> filteredItems = new FilteredList<>(items, p->true);
-        TableView<Event> eventTable = new TableViewGenerator<Event>(Event.class,filteredItems).getTable();
+        FilteredList<MyEvent> filteredItems = new FilteredList<>(items, p->true);
+        TableView<MyEvent> eventTable = new TableViewGenerator<MyEvent>(MyEvent.class,filteredItems,0,4).getTable();
         table = eventTable;
-        table.setLayoutX(150);
-        table.setLayoutY(150);
-        table.setPrefHeight(250);
-        table.setPrefWidth(500);
+        TableColumn<MyEvent, ImageView> col = new TableColumn<>("logo");
+        col.setCellValueFactory(new PropertyValueFactory<MyEvent, ImageView>(new ImageView(new Image()));
+        table.setLayoutX(tableSize.getLayoutX());
+        table.setLayoutY(tableSize.getLayoutY());
+        table.setPrefHeight(tableSize.getHeight());
+        table.setPrefWidth(tableSize.getWidth());
+        table.setColumnResizePolicy(TableView.UNCONSTRAINED_RESIZE_POLICY);
         eventsAnchor.getChildren().add(eventTable);
+        if(user.getAccessLevel()<2){
+            eventsAnchor.getChildren().remove(buttonCreate);
+        }
     }
 
     public EventsController(User user) {

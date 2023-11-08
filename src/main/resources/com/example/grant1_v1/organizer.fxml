@@ -18,24 +18,29 @@
                   <Image url="@back2.jpg" />
                </image>
             </ImageView>
-            <ImageView fx:id="imageView_logo" fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imageView_logo" fitHeight="150.0" fitWidth="200.0" layoutX="20.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@logo.png" />
                </image>
             </ImageView>
             <Button fx:id="goBack" layoutX="32.0" layoutY="416.0" mnemonicParsing="false" onAction="#goBack" prefHeight="32.0" prefWidth="92.0" text="Назад" />
-            <Text layoutX="298.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Окно организатора" wrappingWidth="228.4000244140625">
+            <Text layoutX="234.0" layoutY="97.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Окно организатора" wrappingWidth="228.4000244140625">
                <font>
                   <Font size="24.0" />
                </font>
             </Text>
-            <Button fx:id="buttonEvent" layoutX="333.0" layoutY="228.0" mnemonicParsing="false" onAction="#buttonEvent" prefHeight="47.0" prefWidth="130.0" text="Мероприятия" />
-            <Button fx:id="buttonProfile" layoutX="528.0" layoutY="24.0" mnemonicParsing="false" onAction="#buttonProfile" prefHeight="36.0" prefWidth="200.0" text="Личный кабинет" />
+            <Button fx:id="buttonEvent" layoutX="274.0" layoutY="227.0" mnemonicParsing="false" onAction="#buttonEvent" prefHeight="47.0" prefWidth="130.0" text="Мероприятия" />
+            <Button fx:id="buttonProfile" layoutX="528.0" layoutY="311.0" mnemonicParsing="false" onAction="#buttonProfile" prefHeight="36.0" prefWidth="200.0" text="Личный кабинет" />
             <ImageView fx:id="imageView_photo" fitHeight="132.0" fitWidth="200.0" layoutX="47.0" layoutY="174.0" pickOnBounds="true" preserveRatio="true" />
-            <Label fx:id="label_welcome" layoutX="309.0" layoutY="135.0" text="Label" />
-            <Label fx:id="label_name" layoutX="309.0" layoutY="175.0" text="Label" />
-            <Button fx:id="buttonMember" layoutX="333.0" layoutY="305.0" mnemonicParsing="false" onAction="#buttonMember" prefHeight="47.0" prefWidth="130.0" text="Участники" />
-            <Button fx:id="buttonJuri" layoutX="333.0" layoutY="385.0" mnemonicParsing="false" onAction="#buttonJuri" prefHeight="47.0" prefWidth="130.0" text="Жюри" />
+            <Label fx:id="label_welcome" layoutX="245.0" layoutY="134.0" text="Label" />
+            <Label fx:id="label_name" layoutX="245.0" layoutY="174.0" text="Label" />
+            <Button fx:id="buttonMember" layoutX="274.0" layoutY="304.0" mnemonicParsing="false" onAction="#buttonMember" prefHeight="47.0" prefWidth="130.0" text="Участники" />
+            <Button fx:id="buttonJuri" layoutX="274.0" layoutY="384.0" mnemonicParsing="false" onAction="#buttonJuri" prefHeight="47.0" prefWidth="130.0" text="Жюри" />
+            <ImageView fx:id="profileImg" fitHeight="206.0" fitWidth="200.0" layoutX="528.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@default-profile.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>
