@@ -8,18 +8,22 @@ public class Activity {
     String date;
     String time;
 
+    String direction;
 
 
-    public Activity(String activity_name, String date, String time) {
+
+    public Activity(String activity_name, String date, String time, String direction) {
         this.activity_name = activity_name;
         this.date = date;
         this.time = time;
+        this.direction = direction;
     }
     public Activity(ResultSet resultSet) {
         try {
             this.activity_name = resultSet.getString(1);
             this.date = resultSet.getString(2);
             this.time = resultSet.getString(3);
+            this.direction = resultSet.getString(4);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -48,5 +52,13 @@ public class Activity {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getDirection() {
+        return direction;
+    }
+
+    public void setDirection(String direction) {
+        this.direction = direction;
     }
 }

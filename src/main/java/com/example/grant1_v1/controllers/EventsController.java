@@ -85,7 +85,7 @@ public class EventsController {
         TableView<MyEvent> eventTable = new TableViewGenerator<MyEvent>(MyEvent.class,filteredItems,0,4).getTable();
         table = eventTable;
         TableColumn<MyEvent, ImageView> col = new TableColumn<>("logo");
-        col.setCellValueFactory(new PropertyValueFactory<MyEvent, ImageView>(new ImageView(new Image())));
+//        col.setCellValueFactory(new PropertyValueFactory<MyEvent, ImageView>(new ImageView(new Image())));
         table.setLayoutX(tableSize.getLayoutX());
         table.setLayoutY(tableSize.getLayoutY());
         table.setPrefHeight(tableSize.getHeight());

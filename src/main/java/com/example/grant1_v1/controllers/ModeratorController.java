@@ -1,10 +1,7 @@
 package com.example.grant1_v1.controllers;
 
 import com.example.grant1_v1.HelloApplication;
-import com.example.grant1_v1.models.DBConnect;
-import com.example.grant1_v1.models.Query;
-import com.example.grant1_v1.models.TableViewGenerator;
-import com.example.grant1_v1.models.User;
+import com.example.grant1_v1.models.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -13,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
@@ -82,6 +80,12 @@ public class ModeratorController {
     private Button buttonActivity;
 
     @FXML
+    private TextField insertDirection;
+
+    @FXML
+    private TextField insertEvent;
+
+    @FXML
     void buttonActivity(ActionEvent event) {
 
     }
@@ -143,9 +147,15 @@ public class ModeratorController {
         FilteredList<Activity> filteredItems = new FilteredList<>(items, p->true);
         TableView<Activity> activityTable = new TableViewGenerator<Activity>(Activity.class,filteredItems).getTable();
         table = activityTable;
+        TableFilterGenerator<Activity> filter = new TableFilterGenerator<>(table, filteredItems);
+        filter.addNewEqualsFilter(insertDirection, "direction");
+        filter.setFiltersToTable();
+        TableFilterGenerator<Activity> filter2 = new TableFilterGenerator<>(table, filteredItems);
+        filter2.addNewEqualsFilter(insertEvent, "activity_name");
+        filter2.setFiltersToTable();
         table.setLayoutX(150);
-        table.setLayoutY(200);
-        table.setPrefHeight(250);
+        table.setLayoutY(250);
+        table.setPrefHeight(200);
         table.setPrefWidth(550);
         moderatorAnchor.getChildren().add(activityTable);
     }

@@ -15,7 +15,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import com.octo.captcha.service.image.ImageCaptchaService;
+//import com.octo.captcha.service.image.ImageCaptchaService;
 
 public class AuthController {
 

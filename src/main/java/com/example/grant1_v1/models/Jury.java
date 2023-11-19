@@ -8,11 +8,14 @@ public class Jury {
     String accessLevel;
     String mail;
     String photo;
-    public Jury(String name, String accessLevel, String mail, String photo) {
+
+    String activity;
+    public Jury(String name, String accessLevel, String mail, String photo, String activity) {
         this.name = name;
         this.accessLevel = accessLevel;
         this.mail = mail;
         this.photo = photo;
+        this.activity = activity;
     }
     public Jury(ResultSet resultSet) {
         try {
@@ -20,6 +23,7 @@ public class Jury {
             this.accessLevel = resultSet.getString(2);
             this.mail = resultSet.getString(3);
             this.photo = resultSet.getString(4);
+            this.activity = resultSet.getString(5);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -55,5 +59,13 @@ public class Jury {
 
     public void setPhoto(String photo) {
         this.photo = photo;
+    }
+
+    public String getActivity() {
+        return activity;
+    }
+
+    public void setActivity(String activity) {
+        this.activity = activity;
     }
 }
