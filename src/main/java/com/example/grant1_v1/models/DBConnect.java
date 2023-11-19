@@ -1,5 +1,7 @@
 package com.example.grant1_v1.models;
 
+import com.example.grant1_v1.controllers.MyAlert;
+
 import java.sql.*;
 import java.util.ArrayList;
 
@@ -39,18 +41,34 @@ public class DBConnect {
             throw new RuntimeException(e);
         }
     }
-    public static ResultSet executePreparedQuery(String queryString, ArrayList<String> parameters){
+    public static ResultSet executePreparedQuery(String queryString, ArrayList<String> parameters) {
         try {
             PreparedStatement query = DBConnect.getDBConnect().getConnection().prepareStatement(queryString);
             for (int i = 0; i < parameters.size(); i++) {
-                query.setString(i+1, parameters.get(i));
+                query.setString(i + 1, parameters.get(i));
             }
-            return  query.executeQuery();
-        }catch (SQLException e){
+            return query.executeQuery();
+        } catch (SQLException e) {
             System.out.println("Parametrized Query Error");
             throw new RuntimeException(e);
         }
     }
+
+        public static void executePreparedInsert (String queryString, ArrayList<String> parameters){
+
+            try {
+                PreparedStatement query = DBConnect.getDBConnect().getConnection().prepareStatement(queryString);
+                for (int i = 0; i < parameters.size(); i++) {
+                    query.setString(i+1, parameters.get(i));
+                }
+                query.executeUpdate();
+            }catch (SQLException e){
+                MyAlert alert = new MyAlert("Ошибка в заполнении данных! Пожалуйства проверьте корректность заполненных вами значений");
+                System.out.println("Parametrized Query Error");
+                throw new RuntimeException(e);
+            }
+        }
+
 }
 
 
