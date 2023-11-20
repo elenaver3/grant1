@@ -10,7 +10,7 @@ public class Jury {
     String photo;
 
     String activity;
-    public Jury(String name, String accessLevel, String mail, String photo, String activity) {
+    public Jury(String name, String mail, String photo, String accessLevel, String activity) {
         this.name = name;
         this.accessLevel = accessLevel;
         this.mail = mail;
@@ -20,9 +20,9 @@ public class Jury {
     public Jury(ResultSet resultSet) {
         try {
             this.name = resultSet.getString(1);
-            this.accessLevel = resultSet.getString(2);
-            this.mail = resultSet.getString(3);
-            this.photo = resultSet.getString(4);
+            this.mail = resultSet.getString(2);
+            this.photo = resultSet.getString(3);
+            this.accessLevel = resultSet.getString(4);
             this.activity = resultSet.getString(5);
         } catch (SQLException e) {
             throw new RuntimeException(e);
