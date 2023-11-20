@@ -16,9 +16,7 @@ import javafx.scene.layout.AnchorPane;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.util.*;
 
 public class ModeratorController {
 
@@ -54,8 +52,23 @@ public class ModeratorController {
     private Label label_welcome;
 
     @FXML
-    void buttonEvent(ActionEvent event) {
+    private Button submitApplication;
 
+    @FXML
+    void submitApplication(ActionEvent event) {
+        Activity activity = table.getSelectionModel().getSelectedItem();
+
+        DBConnect.executePreparedModificationQuery(Query.updateModeratorOnActivity, new ArrayList<String>(
+                                                                                    Arrays.asList(
+                                                                                            String.valueOf(user.getId()),
+                                                                                            activity.getActivityId()+""
+                                                                                    )));
+        MyAlert alert = new MyAlert("Заявка успешно подана");
+    }
+
+    @FXML
+    void buttonEvent(ActionEvent event) {
+        HelloApplication.changeMainPage("moderator_event.fxml", new ProfileController(user));
     }
 
     @FXML
@@ -151,7 +164,7 @@ public class ModeratorController {
         filter.addNewEqualsFilter(insertDirection, "direction");
         filter.setFiltersToTable();
         TableFilterGenerator<Activity> filter2 = new TableFilterGenerator<>(table, filteredItems);
-        filter2.addNewEqualsFilter(insertEvent, "activity_name");
+        filter2.addNewEqualsFilter(insertEvent, "activityName");
         filter2.setFiltersToTable();
         table.setLayoutX(150);
         table.setLayoutY(250);

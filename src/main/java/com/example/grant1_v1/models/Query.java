@@ -21,8 +21,12 @@ public class Query {
     public static final String getRole = "SELECT accessLevel FROM user WHERE id=?";
     public static final String getMembers = "SELECT user.name, mail, photo, accesslevel.name FROM user JOIN accesslevel ON accesslevel.id=user.accessLevel WHERE accessLevel = 4";
     public static final String getMembersCount = "SELECT COUNT(user.name) FROM user JOIN accesslevel ON accesslevel.id=user.accessLevel WHERE accessLevel = 4";
-    public static final String getActivities = "SELECT activity.name AS activity, event.startDate AS date, activity.time, event.name AS direction\n" +
+    public static final String getActivities = "SELECT activity.id, activity.name AS activity, event.startDate AS date, activity.time, event.name AS direction\n" +
             "FROM event JOIN activity ON activity.eventID=event.id;";
+
+    public static final String updateModeratorOnActivity = "UPDATE `activity` \n" +
+                                                            "SET `moderatorID`=?\n" +
+                                                            "WHERE `id`=?;";
 
 
     }

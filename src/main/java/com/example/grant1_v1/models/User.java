@@ -5,6 +5,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class User {
+
+    int id;
     private String name;
     private String mail;
     private int accessLevel;
@@ -15,6 +17,7 @@ public class User {
             query.setString(1,mail);
             ResultSet result = query.executeQuery();
             if(result.next()){
+                id = result.getInt(1);
                 name = result.getString(2);
                 gender = result.getString(3);
                 mail = result.getString(4);
@@ -53,6 +56,14 @@ public class User {
 
     public String getGender() {
         return gender;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setGender(String gender) {
