@@ -121,4 +121,9 @@ public class RegisterController {
         Regex.addListenerFormatter(textField_phone, Regex.checkPhone);
         Regex.addListenerFormatter(textField_birthday, Regex.getCheckBirthday());
     }
+
+    @FXML
+    void goBack(ActionEvent event) {
+        HelloApplication.changeMainPage("hello-view.fxml");
+    }
 }
