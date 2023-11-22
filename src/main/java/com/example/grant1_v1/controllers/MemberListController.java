@@ -76,6 +76,17 @@ public class MemberListController {
         FilteredList<Member> filteredItems = new FilteredList<>(items, p->true);
         TableView<Member> memberTable = new TableViewGenerator<Member>(Member.class,filteredItems).getTable();
         table = memberTable;
+        table.setLayoutX(150);
+        table.setLayoutY(200);
+        table.setPrefHeight(200);
+        table.setPrefWidth(750);
+
+        TableFilterGenerator<Member> filter = new TableFilterGenerator<>(table, filteredItems);
+        filter.addNewEqualsFilter(filterFio, "name");
+        filter.setFiltersToTable();
+//        TableFilterGenerator<Member> filter2 = new TableFilterGenerator<>(table, filteredItems);
+//        filter2.addNewEqualsFilter(filterEvent, "activity");
+//        filter2.setFiltersToTable();
 
         memberAnchor.getChildren().add(memberTable);
 
