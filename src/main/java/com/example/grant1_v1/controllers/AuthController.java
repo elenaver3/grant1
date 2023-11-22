@@ -163,7 +163,7 @@ public class AuthController {
 
     @FXML
     void register(ActionEvent event) {
-        HelloApplication.changeMainPage("registration.fxml", new RegController());
+        HelloApplication.changeMainPage("registration.fxml", new RegisterController());
     }
 
     @FXML

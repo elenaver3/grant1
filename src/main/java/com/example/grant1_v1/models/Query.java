@@ -33,4 +33,11 @@ public class Query {
                                             "WHERE eventID = ?;";
 
 
+    public static final String registerUser = "INSERT INTO user(name,gender,mail,birthday,city,telephone)\n" +
+            "VALUES\n" +
+            "(?,?,?,?,?,?);\n";
+    public static final String registerAuthorizationData = "INSERT INTO auth(userID,password)\n" +
+            "VALUES (?,?);";
+
+
     }

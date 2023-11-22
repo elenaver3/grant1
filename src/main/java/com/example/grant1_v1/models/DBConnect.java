@@ -90,6 +90,21 @@ public class DBConnect {
             throw new RuntimeException(e);
         }
     }
+
+    public static void executePreparedInsert (String queryString, ArrayList<String> parameters){
+
+        try {
+            PreparedStatement query = DBConnect.getDBConnect().getConnection().prepareStatement(queryString);
+            for (int i = 0; i < parameters.size(); i++) {
+                query.setString(i+1, parameters.get(i));
+            }
+            query.executeUpdate();
+        }catch (SQLException e){
+            MyAlert alert = new MyAlert("Ошибка в заполнении данных! Пожалуйства проверьте корректность заполненных вами значений");
+            System.out.println("Parametrized Query Error");
+            throw new RuntimeException(e);
+        }
+    }
 }
 
 
