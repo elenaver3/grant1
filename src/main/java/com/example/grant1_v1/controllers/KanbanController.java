@@ -91,11 +91,7 @@ public class KanbanController {
             taskTable.getItems().add(new Task(items.get(i).getActivityName(),items.get(i).getStatus()));
         }
 
-
-
         this.tasks = tasks;
-
-
 //        taskTable.setItems(tasks);
 
         k = new Kanban(180, 80, tasks);
