@@ -126,4 +126,14 @@ public class RegisterController {
     void goBack(ActionEvent event) {
         HelloApplication.changeMainPage("hello-view.fxml");
     }
+
+    @FXML
+    void registration(ActionEvent event) {
+        HelloApplication.changeMainPage("main.fxml");
+    }
+
+    @FXML
+    void enter(ActionEvent event) {
+        HelloApplication.changeMainPage("authorization.fxml");
+    }
 }

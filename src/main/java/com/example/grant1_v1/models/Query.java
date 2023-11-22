@@ -14,6 +14,9 @@ public class Query {
     public static final String registerUser = "INSERT INTO user(name,gender,mail,birthday,city,telephone)\n" +
             "VALUES\n" +
             "(?,?,?,?,?,?);\n";
+
+    public static final String getUser = "SELECT * FROM user WHERE id = ? ";
+
     public static final String registerAuthorizationData = "INSERT INTO authentication(mail,password)\n" +
             "VALUES (?,?);";
 }
