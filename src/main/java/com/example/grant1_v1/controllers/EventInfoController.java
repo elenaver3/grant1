@@ -10,6 +10,8 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 
 public class EventInfoController {
+
+
     EventsController toPage;
     MyEvent event;
     @FXML
@@ -37,6 +39,9 @@ public class EventInfoController {
     private Label nameEvent;
 
     @FXML
+    private Button kanban;
+
+    @FXML
     void goBack(ActionEvent event) {
         HelloApplication.changeMainPage("event.fxml", toPage);
     }
@@ -50,5 +55,10 @@ public class EventInfoController {
     public EventInfoController(MyEvent event, EventsController toPage) {
         this.toPage = toPage;
         this.event = event;
+    }
+
+    @FXML
+    void kanban(ActionEvent event) {
+        HelloApplication.changeMainPage("kanban.fxml", new KanbanController(this.event, this));
     }
 }

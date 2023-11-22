@@ -53,7 +53,7 @@ public class EventsController {
     private Rectangle tableSize;
     @FXML
     void goBack(ActionEvent event) {
-            HelloApplication.changeMainPage("main.fxml", new MainController());
+        HelloApplication.changeMainPage("main.fxml", new MainController());
     }
 
     @FXML
@@ -85,14 +85,14 @@ public class EventsController {
         TableView<MyEvent> eventTable = new TableViewGenerator<MyEvent>(MyEvent.class,filteredItems,0,4).getTable();
         table = eventTable;
         TableColumn<MyEvent, ImageView> col = new TableColumn<>("logo");
-        col.setCellValueFactory(new PropertyValueFactory<MyEvent, ImageView>(new ImageView(new Image()));
+//        col.setCellValueFactory(new PropertyValueFactory<MyEvent, ImageView>(new ImageView(new Image())));
         table.setLayoutX(tableSize.getLayoutX());
         table.setLayoutY(tableSize.getLayoutY());
         table.setPrefHeight(tableSize.getHeight());
         table.setPrefWidth(tableSize.getWidth());
         table.setColumnResizePolicy(TableView.UNCONSTRAINED_RESIZE_POLICY);
         eventsAnchor.getChildren().add(eventTable);
-        if(user.getAccessLevel()<2){
+        if(user.getAccessLevel()>2){
             eventsAnchor.getChildren().remove(buttonCreate);
         }
     }

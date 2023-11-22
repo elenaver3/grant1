@@ -15,7 +15,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import com.octo.captcha.service.image.ImageCaptchaService;
+//import com.octo.captcha.service.image.ImageCaptchaService;
 
 public class AuthController {
 
@@ -163,7 +163,7 @@ public class AuthController {
 
     @FXML
     void register(ActionEvent event) {
-        HelloApplication.changeMainPage("registration.fxml", new RegController());
+        HelloApplication.changeMainPage("registration.fxml", new RegisterController());
     }
 
     @FXML

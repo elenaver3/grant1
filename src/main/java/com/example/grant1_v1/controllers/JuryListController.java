@@ -52,7 +52,18 @@ public class JuryListController {
 
     @FXML
     public void initialize() {
-        ResultSet resultSet = DBConnect.getDBConnect().executeQuery(Query.getJuryies);
+
+        ResultSet resultSet = DBConnect.getDBConnect().executeQuery(Query.getJuryiesAndModeratorsCount);
+        try {
+            while (resultSet.next()) {
+                labelCount.setText(String.valueOf(resultSet.getInt(1)));
+            }
+        } catch (SQLException e) {
+            System.out.println("Jury count creation error");
+            throw new RuntimeException(e);
+        }
+
+        resultSet = DBConnect.getDBConnect().executeQuery(Query.getJuryiesAndModerators);
         ObservableList<Jury> items = FXCollections.observableArrayList();
         try {
             while (resultSet.next()) {
@@ -65,6 +76,16 @@ public class JuryListController {
         FilteredList<Jury> filteredItems = new FilteredList<>(items, p->true);
         TableView<Jury> juryTable = new TableViewGenerator<Jury>(Jury.class,filteredItems).getTable();
         table = juryTable;
+        table.setLayoutX(150);
+        table.setLayoutY(250);
+        table.setPrefHeight(200);
+        table.setPrefWidth(750);
+        TableFilterGenerator<Jury> filter = new TableFilterGenerator<>(table, filteredItems);
+        filter.addNewEqualsFilter(filterF, "name");
+        filter.setFiltersToTable();
+        TableFilterGenerator<Jury> filter2 = new TableFilterGenerator<>(table, filteredItems);
+        filter2.addNewEqualsFilter(filterEvent, "activity");
+        filter2.setFiltersToTable();
         juryMods.getChildren().add(juryTable);
     }
 

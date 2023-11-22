@@ -23,7 +23,6 @@ public class HelloApplication extends Application {
         stage.centerOnScreen();
         stage.setResizable(false);
         stage.show();
-
     }
 
     public static FXMLLoader getLoader() {

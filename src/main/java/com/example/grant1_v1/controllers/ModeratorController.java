@@ -1,10 +1,7 @@
 package com.example.grant1_v1.controllers;
 
 import com.example.grant1_v1.HelloApplication;
-import com.example.grant1_v1.models.DBConnect;
-import com.example.grant1_v1.models.Query;
-import com.example.grant1_v1.models.TableViewGenerator;
-import com.example.grant1_v1.models.User;
+import com.example.grant1_v1.models.*;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -13,14 +10,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.GregorianCalendar;
+import java.util.*;
 
 public class ModeratorController {
 
@@ -56,8 +52,23 @@ public class ModeratorController {
     private Label label_welcome;
 
     @FXML
-    void buttonEvent(ActionEvent event) {
+    private Button submitApplication;
 
+    @FXML
+    void submitApplication(ActionEvent event) {
+        Activity activity = table.getSelectionModel().getSelectedItem();
+
+        DBConnect.executePreparedModificationQuery(Query.updateModeratorOnActivity, new ArrayList<String>(
+                                                                                    Arrays.asList(
+                                                                                            String.valueOf(user.getId()),
+                                                                                            activity.getActivityId()+""
+                                                                                    )));
+        MyAlert alert = new MyAlert("Заявка успешно подана");
+    }
+
+    @FXML
+    void buttonEvent(ActionEvent event) {
+        HelloApplication.changeMainPage("moderator_event.fxml", new ProfileController(user));
     }
 
     @FXML
@@ -80,6 +91,12 @@ public class ModeratorController {
 
     @FXML
     private Button buttonActivity;
+
+    @FXML
+    private TextField insertDirection;
+
+    @FXML
+    private TextField insertEvent;
 
     @FXML
     void buttonActivity(ActionEvent event) {
@@ -143,9 +160,15 @@ public class ModeratorController {
         FilteredList<Activity> filteredItems = new FilteredList<>(items, p->true);
         TableView<Activity> activityTable = new TableViewGenerator<Activity>(Activity.class,filteredItems).getTable();
         table = activityTable;
+        TableFilterGenerator<Activity> filter = new TableFilterGenerator<>(table, filteredItems);
+        filter.addNewEqualsFilter(insertDirection, "direction");
+        filter.setFiltersToTable();
+        TableFilterGenerator<Activity> filter2 = new TableFilterGenerator<>(table, filteredItems);
+        filter2.addNewEqualsFilter(insertEvent, "activityName");
+        filter2.setFiltersToTable();
         table.setLayoutX(150);
-        table.setLayoutY(200);
-        table.setPrefHeight(250);
+        table.setLayoutY(250);
+        table.setPrefHeight(200);
         table.setPrefWidth(550);
         moderatorAnchor.getChildren().add(activityTable);
     }

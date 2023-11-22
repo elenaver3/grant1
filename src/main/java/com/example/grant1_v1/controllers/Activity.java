@@ -4,34 +4,42 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Activity {
-    String activity_name;
+
+    int activityId;
+    String activityName;
     String date;
     String time;
 
+    String direction;
 
 
-    public Activity(String activity_name, String date, String time) {
-        this.activity_name = activity_name;
+
+    public Activity(int activityId, String activityName, String date, String time, String direction) {
+        this.activityId = activityId;
+        this.activityName = activityName;
         this.date = date;
         this.time = time;
+        this.direction = direction;
     }
     public Activity(ResultSet resultSet) {
         try {
-            this.activity_name = resultSet.getString(1);
-            this.date = resultSet.getString(2);
-            this.time = resultSet.getString(3);
+            this.activityId = resultSet.getInt(1);
+            this.activityName = resultSet.getString(2);
+            this.date = resultSet.getString(3);
+            this.time = resultSet.getString(4);
+            this.direction = resultSet.getString(5);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
 
     }
 
-    public String getActivity_name() {
-        return activity_name;
+    public String getActivityName() {
+        return activityName;
     }
 
-    public void setActivity_name(String activity_name) {
-        this.activity_name = activity_name;
+    public void setActivityName(String activityName) {
+        this.activityName = activityName;
     }
 
     public String getDate() {
@@ -48,5 +56,21 @@ public class Activity {
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public String getDirection() {
+        return direction;
+    }
+
+    public void setDirection(String direction) {
+        this.direction = direction;
+    }
+
+    public int getActivityId() {
+        return activityId;
+    }
+
+    public void setActivityId(int activityId) {
+        this.activityId = activityId;
     }
 }
