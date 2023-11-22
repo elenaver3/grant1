@@ -83,16 +83,16 @@ public class KanbanController {
             throw new RuntimeException(e);
         }
 
-        taskTable = new TableView<>();
+        taskTable = new TableView<Task>();
 
         ObservableList<Task> tasks = FXCollections.observableArrayList();
         for (int i = 0; i < items.size(); i++) {
             tasks.add(new Task(items.get(i).getActivityName(),items.get(i).getStatus()));
-            taskTable.getItems().add(new Task(items.get(i).getActivityName(),items.get(i).getStatus()));
+//            taskTable.getItems().add(new Task(items.get(i).getActivityName(),items.get(i).getStatus()));
         }
 
         this.tasks = tasks;
-//        taskTable.setItems(tasks);
+        taskTable.setItems(tasks);
 
         k = new Kanban(180, 80, tasks);
         pane.getChildren().add(k.getRoot());
