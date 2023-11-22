@@ -39,10 +39,6 @@ public class Kanban {
         addColumn("TO DO");
         addColumn("IN ACTION");
         addColumn("DONE");
-//        Task t = new Task("ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt##", "TO DO");
-//        Task t1 = new Task("E", "IN ACTION");
-//        addTask(t);
-//        addTask(t1);
 
         for (int i = 0; i < rootList.size(); i++) {
             setDragMotions(rootList.get(i));
