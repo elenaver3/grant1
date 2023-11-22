@@ -7,6 +7,7 @@ module com.example.grant1_v1 {
     requires simplecaptcha;
     requires javafx.swing;
     requires java.prefs;
+    requires org.apache.pdfbox;
 
 
     opens com.example.grant1_v1 to javafx.fxml;

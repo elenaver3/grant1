@@ -13,6 +13,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -31,6 +32,8 @@ public class KanbanController {
         this.user = user;
     }
 
+    private ObservableList<Task> tasks;
+
     EventInfoController toPage;
     MyEvent event;
 
@@ -46,13 +49,21 @@ public class KanbanController {
     private Button goBack;
 
     @FXML
+    private Button PDFButton;
+
+    @FXML
     private ImageView imageView_logo;
 
     @FXML
     private TableView<?> tableView_activity;
 
+    private TableView<Task> taskTable;
+
     @FXML
     private AnchorPane pane;
+
+    @FXML
+    private Button CSVButton;
 
     @FXML
     void goBack(ActionEvent event) {
@@ -72,12 +83,22 @@ public class KanbanController {
             throw new RuntimeException(e);
         }
 
+        taskTable = new TableView<>();
+
         ObservableList<Task> tasks = FXCollections.observableArrayList();
         for (int i = 0; i < items.size(); i++) {
             tasks.add(new Task(items.get(i).getActivityName(),items.get(i).getStatus()));
+            taskTable.getItems().add(new Task(items.get(i).getActivityName(),items.get(i).getStatus()));
         }
 
-        k = new Kanban(180, 100, tasks);
+
+
+        this.tasks = tasks;
+
+
+//        taskTable.setItems(tasks);
+
+        k = new Kanban(180, 80, tasks);
         pane.getChildren().add(k.getRoot());
     }
 
@@ -92,6 +113,17 @@ public class KanbanController {
     public KanbanController(MyEvent event, EventInfoController toPage) {
         this.toPage = toPage;
         this.event = event;
+    }
+
+
+    @FXML
+    void PDFButton(ActionEvent event) {
+        PDFBuilder.createPDFAsList(tasks);
+    }
+
+    @FXML
+    void CSVButton(ActionEvent event) {
+        CSVBuilder.exportToCSV(taskTable, new Stage());
     }
 
 }
