@@ -28,5 +28,9 @@ public class Query {
                                                             "SET `moderatorID`=?\n" +
                                                             "WHERE `id`=?;";
 
+    public static final String getActivitiesKanban = "SELECT activity.id, activity.name, time, status\n" +
+                                            "FROM activity JOIN event ON event.id=activity.eventID\n" +
+                                            "WHERE eventID = ?;";
+
 
     }

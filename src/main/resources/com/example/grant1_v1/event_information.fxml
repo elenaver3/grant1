@@ -24,7 +24,7 @@
                </image>
             </ImageView>
             <Button fx:id="goBack" layoutX="32.0" layoutY="414.0" mnemonicParsing="false" onAction="#goBack" prefHeight="38.0" prefWidth="103.0" text="Назад" />
-            <Label fx:id="nameEvent" layoutX="261.0" layoutY="59.0" prefHeight="60.0" prefWidth="263.0" text="Название мероприятия" textAlignment="CENTER">
+            <Label fx:id="nameEvent" layoutX="199.0" layoutY="29.0" prefHeight="95.0" prefWidth="530.0" text="Название мероприятия" textAlignment="CENTER" wrapText="true">
                <font>
                   <Font size="16.0" />
                </font>
@@ -34,6 +34,7 @@
             <Label fx:id="labelDate" layoutX="126.0" layoutY="297.0" text="Дата" />
             <Label fx:id="labelCity" layoutX="126.0" layoutY="331.0" text="Город" />
             <Label fx:id="labelOrganizer" layoutX="126.0" layoutY="370.0" text="Организатор" />
+            <Button fx:id="kanban" layoutX="583.0" layoutY="414.0" mnemonicParsing="false" onAction="#kanban" prefHeight="38.0" prefWidth="103.0" text="Kanban" />
          </children>
       </AnchorPane>
    </children>

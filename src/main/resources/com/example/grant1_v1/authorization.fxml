@@ -25,7 +25,7 @@
                   <Image url="@logo.png" />
                </image>
             </ImageView>
-            <Text layoutX="262.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Почта" wrappingWidth="47.1560001373291" />
+            <Text layoutX="262.0" layoutY="150.0" strokeType="OUTSIDE" strokeWidth="0.0" text="ID" wrappingWidth="47.1560001373291" />
             <TextField fx:id="log" layoutX="327.0" layoutY="133.0" />
             <Text layoutX="262.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Пароль" />
             <PasswordField fx:id="psw" layoutX="327.0" layoutY="174.0" />

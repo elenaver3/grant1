@@ -1,6 +1,7 @@
 package com.example.grant1_v1.controllers;
 
 import com.example.grant1_v1.HelloApplication;
+import com.example.grant1_v1.models.Kanban;
 import com.example.grant1_v1.models.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -85,6 +86,7 @@ public class AddEventController {
     @FXML
     void buttonBoard(ActionEvent event) {
 
+        HelloApplication.changeMainPage("kanban.fxml", new KanbanController(user));
     }
 
     @FXML

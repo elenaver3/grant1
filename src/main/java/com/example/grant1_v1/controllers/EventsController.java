@@ -53,7 +53,7 @@ public class EventsController {
     private Rectangle tableSize;
     @FXML
     void goBack(ActionEvent event) {
-            HelloApplication.changeMainPage("main.fxml", new MainController());
+        HelloApplication.changeMainPage("main.fxml", new MainController());
     }
 
     @FXML
@@ -92,7 +92,7 @@ public class EventsController {
         table.setPrefWidth(tableSize.getWidth());
         table.setColumnResizePolicy(TableView.UNCONSTRAINED_RESIZE_POLICY);
         eventsAnchor.getChildren().add(eventTable);
-        if(user.getAccessLevel()<2){
+        if(user.getAccessLevel()>2){
             eventsAnchor.getChildren().remove(buttonCreate);
         }
     }

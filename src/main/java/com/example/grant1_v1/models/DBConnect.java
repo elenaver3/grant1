@@ -77,6 +77,19 @@ public class DBConnect {
             throw new RuntimeException(e);
         }
     }
+
+    public static ResultSet executePreparedModificationQueryWithResult(String queryString, String parameter){
+        try {
+            PreparedStatement query = DBConnect.getDBConnect().getConnection().prepareStatement(queryString);
+            query.setString(1, parameter);
+//            return query.executeQuery(query.toString());
+            return query.executeQuery();
+        }catch (SQLException e){
+            MyAlert alert = new MyAlert("Ошибка в заполнении данных! Пожалуйства проверьте корректность заполненных вами значений");
+            System.out.println("Parametrized Query Error");
+            throw new RuntimeException(e);
+        }
+    }
 }
 
 
